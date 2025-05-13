@@ -1,0 +1,97 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        gold: {
+          50: '#FFF9E6',
+          100: '#FFF3CC',
+          200: '#FFE799',
+          300: '#FFDB66',
+          400: '#FFCF33',
+          500: '#D4AF37',
+          600: '#AA8C2C',
+          700: '#806921',
+          800: '#554616',
+          900: '#2B230B',
+        },
+        royal: {
+          50: '#F5F5F5',
+          100: '#EBEBEB',
+          200: '#D6D6D6',
+          300: '#C2C2C2',
+          400: '#ADADAD',
+          500: '#999999',
+          600: '#666666',
+          700: '#414141',
+          800: '#2C2C2C',
+          900: '#121212',
+        },
+        success: {
+          50: '#E6FFF0',
+          100: '#CCFFE0',
+          200: '#99FFC2',
+          300: '#66FFA3',
+          400: '#33FF85',
+          500: '#00FF66',
+          600: '#00CC52',
+          700: '#00993D',
+          800: '#006629',
+          900: '#003314',
+        },
+        warning: {
+          50: '#FFF8E6',
+          100: '#FFF1CC',
+          200: '#FFE299',
+          300: '#FFD466',
+          400: '#FFC533',
+          500: '#FFB700',
+          600: '#CC9200',
+          700: '#996E00',
+          800: '#664900',
+          900: '#332500',
+        },
+        error: {
+          50: '#FFE6E6',
+          100: '#FFCCCC',
+          200: '#FF9999',
+          300: '#FF6666',
+          400: '#FF3333',
+          500: '#FF0000',
+          600: '#CC0000',
+          700: '#990000',
+          800: '#660000',
+          900: '#330000',
+        },
+      },
+      fontFamily: {
+        heading: ['"Playfair Display"', 'serif'],
+        body: ['Raleway', 'sans-serif'],
+      },
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+        'gold-gradient': 'linear-gradient(135deg, #D4AF37 0%, #FFEFC7 50%, #D4AF37 100%)',
+      },
+      animation: {
+        'float': 'float 6s ease-in-out infinite',
+        'shimmer': 'shimmer 2s linear infinite',
+      },
+      keyframes: {
+        float: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-10px)' },
+        },
+        shimmer: {
+          '0%': { backgroundPosition: '200% 0' },
+          '100%': { backgroundPosition: '-200% 0' },
+        },
+      },
+      boxShadow: {
+        'gold': '0 4px 14px 0 rgba(212, 175, 55, 0.39)',
+      },
+    },
+  },
+  plugins: [],
+};
