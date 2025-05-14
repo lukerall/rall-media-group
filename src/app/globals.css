@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --glass-opacity: 0.8;
+    --glass-blur: 10px;
+    --background: 0 0% 98%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --card-border: 214.3 31.8% 91.4%;
+    --primary: 48 60% 52%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --accent: 48 40% 60%;
+    --accent-foreground: 240 5.9% 10%;
+  }
+
+  .dark {
+    --glass-opacity: 0.1;
+    --glass-blur: 10px;
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --card-border: 0 0% 14.9%;
+    --primary: 48 60% 50%;
+    --primary-foreground: 240 5.9% 10%;
+    --secondary: 0 0% 98%;
+    --secondary-foreground: 240 5.9% 10%;
+    --accent: 48 60% 50%;
+    --accent-foreground: 240 5.9% 10%;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-body bg-royal-50 text-royal-900 dark:bg-royal-900 dark:text-royal-50 transition-colors duration-300;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-semibold leading-tight;
+  }
+
+  .section {
+    @apply py-16 md:py-24;
+  }
+
+  .container {
+    @apply px-4 md:px-6 mx-auto max-w-7xl;
+  }
+
+  .glass {
+    @apply backdrop-blur-md bg-white/[var(--glass-opacity)] dark:bg-royal-900/[var(--glass-opacity)];
+  }
+
+  .btn-primary {
+    @apply px-6 py-3 rounded-lg font-medium bg-gold-500 text-royal-900 hover:bg-gold-600 transition-all hover:shadow-gold active:scale-95;
+  }
+
+  .btn-outline {
+    @apply px-6 py-3 rounded-lg font-medium border-2 border-gold-500 text-gold-500 hover:bg-gold-500 hover:text-royal-900 transition-all hover:shadow-gold active:scale-95;
+  }
+
+  .gradient-text {
+    @apply bg-gold-gradient inline-block text-transparent bg-clip-text;
+  }
+}
