@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState } from 'react';
 import { Send } from 'lucide-react';
 import { supabase } from '../../lib/supabase';
@@ -44,7 +46,7 @@ export default function ContactForm({ className = '' }: ContactFormProps) {
       // Log the exact payload being sent
       console.log('Contact data payload:', contactData);
 
- // Check if contact already exists
+      // Check if contact already exists
       const { data: existingContact } = await supabase
         .from("contacts")
         .select("id")
@@ -67,7 +69,6 @@ export default function ContactForm({ className = '' }: ContactFormProps) {
 
         contactId = newContact.id;
       }
-
 
       // Create submission with message
       const { error: submissionError } = await supabase

@@ -1,8 +1,10 @@
+'use client';
+
 import React from 'react';
 import { ChevronDown, Award, Shield, Users } from 'lucide-react';
 import AnimatedElement from '../ui/AnimatedElement';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 
 export default function Hero() {
   return (
@@ -80,10 +82,10 @@ export default function Hero() {
           
           <AnimatedElement animation="slideUp" delay={0.8}>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/launch" className="btn-primary">
+              <Link href="/launch" className="btn-primary">
                 Launch Your Project
               </Link>
-              <Link to="/about" className="btn-outline">
+              <Link href="/about" className="btn-outline">
                 Why Choose Us
               </Link>
             </div>
