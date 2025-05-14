@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "dev": "next dev"
+  },
+  "dependencies": {
+    "framer-motion": "^11.0.0",
+    "react-intersection-observer": "^9.8.0"
+  }
+}
