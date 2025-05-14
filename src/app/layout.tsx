@@ -1,5 +1,3 @@
-'use client';
-
 import type { Metadata } from 'next';
 import { ThemeProvider } from '@/context/ThemeContext';
 import Navbar from '@/components/layout/Navbar';
