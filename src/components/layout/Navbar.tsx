@@ -1,8 +1,6 @@
-'use client';
-
 import React, { useEffect, useState } from 'react';
 import { Menu, X } from 'lucide-react';
-import Link from 'next/link';
+import { Link, useLocation } from 'react-router-dom';
 import ThemeToggle from '../ui/ThemeToggle';
 import { cn } from '../../utils/cn';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -19,10 +17,9 @@ const navLinks = [
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [currentPath, setCurrentPath] = useState('/');
+  const location = useLocation();
 
   useEffect(() => {
-    setCurrentPath(window.location.pathname);
     const handleScroll = () => {
       const isScrolled = window.scrollY > 10;
       setScrolled(isScrolled);
@@ -42,7 +39,7 @@ export default function Navbar() {
       )}
     >
       <div className="container flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-2">
+        <Link to="/" className="flex items-center gap-2">
           <span className="text-2xl font-heading font-bold">
             <span className="text-royal-900 dark:text-white">RALL</span>
             <span className="text-gold-500">MEDIA</span>
@@ -55,10 +52,10 @@ export default function Navbar() {
             {navLinks.map((link) => (
               <li key={link.name}>
                 <Link 
-                  href={link.href}
+                  to={link.href}
                   className={cn(
                     "text-royal-800 dark:text-royal-100 hover:text-gold-500 dark:hover:text-gold-500 transition-colors font-medium",
-                    currentPath === link.href && "text-gold-500"
+                    location.pathname === link.href && "text-gold-500"
                   )}
                 >
                   {link.name}
@@ -68,7 +65,7 @@ export default function Navbar() {
           </ul>
           <ThemeToggle />
           <Link 
-            href="/launch" 
+            to="/launch" 
             className="btn-primary"
           >
             Launch Project
@@ -103,10 +100,10 @@ export default function Navbar() {
                   {navLinks.map((link) => (
                     <li key={link.name}>
                       <Link 
-                        href={link.href}
+                        to={link.href}
                         className={cn(
                           "block py-2 text-royal-800 dark:text-royal-100 hover:text-gold-500 dark:hover:text-gold-500 transition-colors font-medium",
-                          currentPath === link.href && "text-gold-500"
+                          location.pathname === link.href && "text-gold-500"
                         )}
                         onClick={() => setIsOpen(false)}
                       >
@@ -116,7 +113,7 @@ export default function Navbar() {
                   ))}
                 </ul>
                 <Link 
-                  href="/launch" 
+                  to="/launch" 
                   className="btn-primary text-center"
                   onClick={() => setIsOpen(false)}
                 >
